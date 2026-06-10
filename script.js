@@ -107,3 +107,220 @@ if ('IntersectionObserver' in window) {
     observer.observe(el);
   });
 }
+
+/* ============================================================
+   PLAYER DE MÚSICA
+   ============================================================ */
+
+class MusicPlayer {
+  constructor() {
+    this.audios = {};
+    this.currentAudio = null;
+    this.currentCard = null;
+    this.init();
+  }
+
+  init() {
+    // Encontrar todos os botões de play
+    const playButtons = document.querySelectorAll('.play-btn');
+    
+    playButtons.forEach(btn => {
+      const audioId = btn.getAttribute('data-audio');
+      const audio = document.getElementById(audioId);
+      
+      if (audio) {
+        this.audios[audioId] = audio;
+        
+        // Adicionar evento de clique
+        btn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          this.togglePlay(audioId, btn);
+        });
+        
+        // Quando a música terminar
+        audio.addEventListener('ended', () => {
+          this.stopPlayback(btn);
+        });
+      }
+    });
+    
+    // Botão para parar todas as músicas
+    const stopAllBtn = document.getElementById('stopAllBtn');
+    if (stopAllBtn) {
+      stopAllBtn.addEventListener('click', () => this.stopAll());
+    }
+  }
+  
+  togglePlay(audioId, button) {
+    const audio = this.audios[audioId];
+    const card = button.closest('.musica-card');
+    
+    if (!audio) return;
+    
+    // Se tem outra música tocando
+    if (this.currentAudio && this.currentAudio !== audio) {
+      this.stopPlayback(this.getButtonFromAudio(this.currentAudio));
+    }
+    
+    // Tocar ou pausar
+    if (audio.paused) {
+      audio.play().catch(err => {
+        console.log('Erro ao tocar: ', err);
+        this.showNotification('⚠️ Clique na página para permitir o áudio', 'erro');
+      });
+      this.setPlayingState(button, card, true);
+      this.currentAudio = audio;
+      this.currentCard = card;
+      this.updateGlobalPlayer(card, 'tocando agora ♪');
+    } else {
+      audio.pause();
+      this.setPlayingState(button, card, false);
+      this.currentAudio = null;
+      this.currentCard = null;
+      this.hideGlobalPlayer();
+    }
+  }
+  
+  stopPlayback(button) {
+    if (!button) return;
+    
+    const audioId = button.getAttribute('data-audio');
+    const audio = this.audios[audioId];
+    const card = button.closest('.musica-card');
+    
+    if (audio) {
+      audio.pause();
+      audio.currentTime = 0;
+      this.setPlayingState(button, card, false);
+    }
+  }
+  
+  stopAll() {
+    Object.values(this.audios).forEach(audio => {
+      audio.pause();
+      audio.currentTime = 0;
+    });
+    
+    document.querySelectorAll('.play-btn').forEach(btn => {
+      this.setPlayingState(btn, btn.closest('.musica-card'), false);
+    });
+    
+    this.currentAudio = null;
+    this.currentCard = null;
+    this.hideGlobalPlayer();
+    this.showNotification('⏹ Todas as músicas foram paradas', 'info');
+  }
+  
+  setPlayingState(button, card, isPlaying) {
+    const playIcon = button.querySelector('.play-icon');
+    const pauseIcon = button.querySelector('.pause-icon');
+    const buttonText = button.childNodes[button.childNodes.length - 1];
+    
+    if (isPlaying) {
+      button.classList.add('playing');
+      if (card) card.classList.add('playing');
+      if (playIcon) playIcon.style.display = 'none';
+      if (pauseIcon) pauseIcon.style.display = 'inline';
+      if (buttonText && buttonText.nodeType === Node.TEXT_NODE) {
+        buttonText.textContent = ' pausar';
+      }
+    } else {
+      button.classList.remove('playing');
+      if (card) card.classList.remove('playing');
+      if (playIcon) playIcon.style.display = 'inline';
+      if (pauseIcon) pauseIcon.style.display = 'none';
+      if (buttonText && buttonText.nodeType === Node.TEXT_NODE) {
+        buttonText.textContent = ' tocar';
+      }
+    }
+  }
+  
+  getButtonFromAudio(audio) {
+    for (let [id, aud] of Object.entries(this.audios)) {
+      if (aud === audio) {
+        return document.querySelector(`.play-btn[data-audio="${id}"]`);
+      }
+    }
+    return null;
+  }
+  
+  updateGlobalPlayer(card, status) {
+    const globalPlayer = document.getElementById('globalPlayer');
+    const tituloElem = document.querySelector('.global-musica-titulo');
+    const statusElem = document.querySelector('.global-musica-status');
+    
+    if (globalPlayer && tituloElem && statusElem && card) {
+      const titulo = card.querySelector('.musica-titulo')?.textContent;
+      const artista = card.querySelector('.musica-artista')?.textContent;
+      
+      tituloElem.textContent = `${titulo} - ${artista}`;
+      statusElem.textContent = status;
+      globalPlayer.style.display = 'flex';
+    }
+  }
+  
+  hideGlobalPlayer() {
+    const globalPlayer = document.getElementById('globalPlayer');
+    if (globalPlayer) {
+      globalPlayer.style.display = 'none';
+    }
+  }
+  
+  showNotification(message, type = 'info') {
+    // Criar notificação flutuante
+    const notification = document.createElement('div');
+    notification.className = `music-notification ${type}`;
+    notification.textContent = message;
+    notification.style.cssText = `
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: ${type === 'erro' ? '#c9707a' : '#8b3a4a'};
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 2rem;
+      font-size: 0.85rem;
+      z-index: 10000;
+      animation: slideUp 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    `;
+    
+    document.body.appendChild(notification);
+    
+    setTimeout(() => {
+      notification.style.animation = 'fadeOut 0.3s ease';
+      setTimeout(() => notification.remove(), 300);
+    }, 3000);
+  }
+}
+
+// Adicionar animações CSS dinamicamente
+const styleSheet = document.createElement("style");
+styleSheet.textContent = `
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateX(-50%) translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  }
+  
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(styleSheet);
+
+// Inicializar o player quando a página carregar
+document.addEventListener('DOMContentLoaded', () => {
+  const player = new MusicPlayer();
+});

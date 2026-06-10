@@ -1,272 +1,368 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Isabela & Vitor Hugo</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Isabela & Vitor Hugo</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="inicio">
+      <div class="hero-overlay"></div>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero" id="inicio">
-    <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-sub">uma história que começou em</p>
+        <h1 class="hero-title">
+          Isabela <span class="amp">&</span> Vitor Hugo
+        </h1>
+        <p class="hero-date">13 de dezembro de 2025</p>
 
-    <div class="hero-content">
-      <p class="hero-sub">uma história que começou em</p>
-      <h1 class="hero-title">Isabela <span class="amp">&</span> Vitor Hugo</h1>
-      <p class="hero-date">13 de dezembro de 2025</p>
+        <div class="counter-wrap">
+          <div class="counter-box">
+            <span class="counter-num" id="c-anos">0</span>
+            <span class="counter-label">anos</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-num" id="c-meses">0</span>
+            <span class="counter-label">meses</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-num" id="c-dias">0</span>
+            <span class="counter-label">dias</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-num" id="c-horas">0</span>
+            <span class="counter-label">horas</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-num" id="c-min">0</span>
+            <span class="counter-label">minutos</span>
+          </div>
+          <div class="counter-box">
+            <span class="counter-num" id="c-seg">0</span>
+            <span class="counter-label">segundos</span>
+          </div>
+        </div>
 
-      <div class="counter-wrap">
-        <div class="counter-box">
-          <span class="counter-num" id="c-anos">0</span>
-          <span class="counter-label">anos</span>
-        </div>
-        <div class="counter-box">
-          <span class="counter-num" id="c-meses">0</span>
-          <span class="counter-label">meses</span>
-        </div>
-        <div class="counter-box">
-          <span class="counter-num" id="c-dias">0</span>
-          <span class="counter-label">dias</span>
-        </div>
-        <div class="counter-box">
-          <span class="counter-num" id="c-horas">0</span>
-          <span class="counter-label">horas</span>
-        </div>
-        <div class="counter-box">
-          <span class="counter-num" id="c-min">0</span>
-          <span class="counter-label">minutos</span>
-        </div>
-        <div class="counter-box">
-          <span class="counter-num" id="c-seg">0</span>
-          <span class="counter-label">segundos</span>
-        </div>
+        <a href="#momentos" class="hero-btn">ver nossa história</a>
       </div>
 
-      <a href="#momentos" class="hero-btn">ver nossa história</a>
-    </div>
+      <div class="hero-scroll-hint">↓</div>
+    </section>
 
-    <div class="hero-scroll-hint">↓</div>
-  </section>
-
-  <!-- ===== FOTO PRINCIPAL ===== -->
-  <section class="foto-casal">
-    <div class="foto-wrap">
-      <!--
+    <!-- ===== FOTO PRINCIPAL ===== -->
+    <section class="foto-casal">
+      <div class="foto-wrap">
+        <!--
         INSTRUÇÃO: substitua o src abaixo por uma foto de vocês juntos.
         Resolução sugerida: 900x600px
         Exemplo: src="images/foto-principal.jpg"
       -->
-      <img
-        src="images/placeholder-casal.jpg"
-        alt="Isabela e Vitor Hugo"
-        class="foto-main"
-        onerror="this.parentElement.classList.add('no-foto')"
-      />
-      <div class="foto-fallback">
-        <span>&#10084;</span>
-        <p>adicione uma foto de vocês aqui</p>
-        <small>images/placeholder-casal.jpg</small>
+        <img
+          src="images/placeholder-casal.jpg"
+          alt="Isabela e Vitor Hugo"
+          class="foto-main"
+          onerror="this.parentElement.classList.add('no-foto')"
+        />
+        <div class="foto-fallback">
+          <span>&#10084;</span>
+          <p>adicione uma foto de vocês aqui</p>
+          <small>images/placeholder-casal.jpg</small>
+        </div>
       </div>
-    </div>
-    <div class="foto-legenda">
-      <p>"Desde que você chegou, tudo faz mais sentido."</p>
-    </div>
-  </section>
+      <div class="foto-legenda">
+        <p>"Desde que você chegou, tudo faz mais sentido."</p>
+      </div>
+    </section>
 
-  <!-- ===== MOMENTOS ===== -->
-  <section class="momentos" id="momentos">
-    <h2 class="section-title">Nossa história</h2>
-    <p class="section-sub">os momentos que ficaram guardados no coração</p>
+    <!-- ===== MOMENTOS ===== -->
+    <section class="momentos" id="momentos">
+      <h2 class="section-title">Nossa história</h2>
+      <p class="section-sub">os momentos que ficaram guardados no coração</p>
 
-    <div class="timeline">
-
-      <!-- MOMENTO 1 -->
-      <div class="momento left">
-        <div class="momento-content">
-          <div class="momento-img-wrap">
-            <!--
+      <div class="timeline">
+        <!-- MOMENTO 1 -->
+        <div class="momento left">
+          <div class="momento-content">
+            <div class="momento-img-wrap">
+              <!--
               INSTRUÇÃO: substitua por foto do momento.
               Resolução sugerida: 400x300px
               Exemplo: src="images/momento-1.jpg"
             -->
-            <img
-              src="images/momento-1.jpg"
-              alt="Momento especial"
-              onerror="this.classList.add('img-erro'); this.nextElementSibling.style.display='flex'"
-            />
-            <div class="img-placeholder">
-              <span>&#128247;</span>
-              <small>images/momento-1.jpg</small>
+              <img
+                src="images/momento-1.jpg"
+                alt="Momento especial"
+                onerror="
+                  this.classList.add('img-erro');
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <div class="img-placeholder">
+                <span>&#128247;</span>
+                <small>images/momento-1.jpg</small>
+              </div>
+            </div>
+            <div class="momento-texto">
+              <span class="momento-data">13 dez 2025</span>
+              <h3>O começo de tudo</h3>
+              <p>
+                <!-- INSTRUÇÃO: escreva aqui o que aconteceu neste dia -->
+                Escreva aqui o que tornou este dia especial para vocês. Pode ser
+                onde estavam, o que sentiram, uma frase que marcou.
+              </p>
             </div>
           </div>
-          <div class="momento-texto">
-            <span class="momento-data">13 dez 2025</span>
-            <h3>O começo de tudo</h3>
-            <p>
-              <!-- INSTRUÇÃO: escreva aqui o que aconteceu neste dia -->
-              Escreva aqui o que tornou este dia especial para vocês. Pode ser
-              onde estavam, o que sentiram, uma frase que marcou.
-            </p>
-          </div>
         </div>
-      </div>
 
-      <!-- MOMENTO 2 -->
-      <div class="momento right">
-        <div class="momento-content">
-          <div class="momento-img-wrap">
-            <!--
+        <!-- MOMENTO 2 -->
+        <div class="momento right">
+          <div class="momento-content">
+            <div class="momento-img-wrap">
+              <!--
               INSTRUÇÃO: substitua por foto do momento.
               Exemplo: src="images/momento-2.jpg"
             -->
-            <img
-              src="images/momento-2.jpg"
-              alt="Momento especial"
-              onerror="this.classList.add('img-erro'); this.nextElementSibling.style.display='flex'"
-            />
-            <div class="img-placeholder">
-              <span>&#128247;</span>
-              <small>images/momento-2.jpg</small>
+              <img
+                src="images/momento-2.jpg"
+                alt="Momento especial"
+                onerror="
+                  this.classList.add('img-erro');
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <div class="img-placeholder">
+                <span>&#128247;</span>
+                <small>images/momento-2.jpg</small>
+              </div>
+            </div>
+            <div class="momento-texto">
+              <span class="momento-data"><!-- coloque a data --></span>
+              <h3><!-- título do momento --></h3>
+              <p>
+                <!-- descrição do momento -->
+                Escreva aqui o que aconteceu neste momento especial.
+              </p>
             </div>
           </div>
-          <div class="momento-texto">
-            <span class="momento-data"><!-- coloque a data --></span>
-            <h3><!-- título do momento --></h3>
-            <p>
-              <!-- descrição do momento -->
-              Escreva aqui o que aconteceu neste momento especial.
-            </p>
-          </div>
         </div>
-      </div>
 
-      <!-- MOMENTO 3 -->
-      <div class="momento left">
-        <div class="momento-content">
-          <div class="momento-img-wrap">
-            <!--
+        <!-- MOMENTO 3 -->
+        <div class="momento left">
+          <div class="momento-content">
+            <div class="momento-img-wrap">
+              <!--
               INSTRUÇÃO: substitua por foto do momento.
               Exemplo: src="images/momento-3.jpg"
             -->
-            <img
-              src="images/momento-3.jpg"
-              alt="Momento especial"
-              onerror="this.classList.add('img-erro'); this.nextElementSibling.style.display='flex'"
-            />
-            <div class="img-placeholder">
-              <span>&#128247;</span>
-              <small>images/momento-3.jpg</small>
+              <img
+                src="images/momento-3.jpg"
+                alt="Momento especial"
+                onerror="
+                  this.classList.add('img-erro');
+                  this.nextElementSibling.style.display = 'flex';
+                "
+              />
+              <div class="img-placeholder">
+                <span>&#128247;</span>
+                <small>images/momento-3.jpg</small>
+              </div>
+            </div>
+            <div class="momento-texto">
+              <span class="momento-data"><!-- coloque a data --></span>
+              <h3><!-- título do momento --></h3>
+              <p>
+                <!-- descrição do momento -->
+                Escreva aqui o que aconteceu neste momento especial.
+              </p>
             </div>
           </div>
-          <div class="momento-texto">
-            <span class="momento-data"><!-- coloque a data --></span>
-            <h3><!-- título do momento --></h3>
-            <p>
-              <!-- descrição do momento -->
-              Escreva aqui o que aconteceu neste momento especial.
-            </p>
-          </div>
         </div>
-      </div>
 
-      <!--
+        <!--
         INSTRUÇÃO: para adicionar mais momentos, copie um bloco acima.
         Alterne entre class="momento left" e class="momento right"
         para o efeito de alternância na timeline.
-      -->
+      --></div>
+    </section>
 
-    </div>
-  </section>
+    <!-- ===== PLAYLIST / MÚSICAS ===== -->
+    <section class="playlist" id="playlist">
+      <h2 class="section-title">Nossa trilha sonora</h2>
+      <p class="section-sub">músicas que marcaram nossa história</p>
 
-  <!-- ===== GALERIA ===== -->
-  <section class="galeria" id="galeria">
-    <h2 class="section-title">Galeria</h2>
-    <p class="section-sub">cada foto, uma memória que fica</p>
+      <div class="musicas-grid">
+        <!-- MÚSICA 1 -->
+        <div class="musica-card" data-musica="musica1">
+          <div class="musica-icon">🎵</div>
+          <h3 class="musica-titulo">Título da Música 1</h3>
+          <p class="musica-artista">Artista / Banda</p>
+          <button class="play-btn" data-audio="audio1">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none">⏸</span>
+            tocar
+          </button>
+          <audio id="audio1" preload="auto">
+            <source src="musicas/musica1.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
 
-    <div class="galeria-grid">
-      <!--
+        <!-- MÚSICA 2 -->
+        <div class="musica-card" data-musica="musica2">
+          <div class="musica-icon">🎶</div>
+          <h3 class="musica-titulo">Título da Música 2</h3>
+          <p class="musica-artista">Artista / Banda</p>
+          <button class="play-btn" data-audio="audio2">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none">⏸</span>
+            tocar
+          </button>
+          <audio id="audio2" preload="auto">
+            <source src="musicas/musica2.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+
+        <!-- MÚSICA 3 -->
+        <div class="musica-card" data-musica="musica3">
+          <div class="musica-icon">🎸</div>
+          <h3 class="musica-titulo">Título da Música 3</h3>
+          <p class="musica-artista">Artista / Banda</p>
+          <button class="play-btn" data-audio="audio3">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none">⏸</span>
+            tocar
+          </button>
+          <audio id="audio3" preload="auto">
+            <source src="musicas/musica3.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+      </div>
+
+      <!-- Controle global (opcional) -->
+      <div class="global-player" id="globalPlayer" style="display: none">
+        <div class="global-player-info">
+          <span class="global-musica-titulo"></span>
+          <span class="global-musica-status"></span>
+        </div>
+        <button class="global-stop-btn" id="stopAllBtn">⏹ parar todas</button>
+      </div>
+    </section>
+
+    <!-- ===== GALERIA ===== -->
+    <section class="galeria" id="galeria">
+      <h2 class="section-title">Galeria</h2>
+      <p class="section-sub">cada foto, uma memória que fica</p>
+
+      <div class="galeria-grid">
+        <!--
         INSTRUÇÃO: adicione suas fotos abaixo.
         Resolução sugerida: mínimo 600x600px, quadradas ficam melhores.
         Altere o src e o alt de cada item.
         Para adicionar mais fotos, copie um <div class="galeria-item">.
       -->
 
-      <div class="galeria-item">
-        <img src="images/galeria-1.jpg" alt="foto 1" onerror="this.parentElement.classList.add('sem-foto')" />
-        <div class="galeria-placeholder"><span>&#128247;</span></div>
+        <div class="galeria-item">
+          <img
+            src="images/galeria-1.jpg"
+            alt="foto 1"
+            onerror="this.parentElement.classList.add('sem-foto')"
+          />
+          <div class="galeria-placeholder"><span>&#128247;</span></div>
+        </div>
+
+        <div class="galeria-item">
+          <img
+            src="images/galeria-2.jpg"
+            alt="foto 2"
+            onerror="this.parentElement.classList.add('sem-foto')"
+          />
+          <div class="galeria-placeholder"><span>&#128247;</span></div>
+        </div>
+
+        <div class="galeria-item">
+          <img
+            src="images/galeria-3.jpg"
+            alt="foto 3"
+            onerror="this.parentElement.classList.add('sem-foto')"
+          />
+          <div class="galeria-placeholder"><span>&#128247;</span></div>
+        </div>
+
+        <div class="galeria-item">
+          <img
+            src="images/galeria-4.jpg"
+            alt="foto 4"
+            onerror="this.parentElement.classList.add('sem-foto')"
+          />
+          <div class="galeria-placeholder"><span>&#128247;</span></div>
+        </div>
+
+        <div class="galeria-item">
+          <img
+            src="images/galeria-5.jpg"
+            alt="foto 5"
+            onerror="this.parentElement.classList.add('sem-foto')"
+          />
+          <div class="galeria-placeholder"><span>&#128247;</span></div>
+        </div>
+
+        <div class="galeria-item">
+          <img
+            src="images/galeria-6.jpg"
+            alt="foto 6"
+            onerror="this.parentElement.classList.add('sem-foto')"
+          />
+          <div class="galeria-placeholder"><span>&#128247;</span></div>
+        </div>
       </div>
+    </section>
 
-      <div class="galeria-item">
-        <img src="images/galeria-2.jpg" alt="foto 2" onerror="this.parentElement.classList.add('sem-foto')" />
-        <div class="galeria-placeholder"><span>&#128247;</span></div>
-      </div>
-
-      <div class="galeria-item">
-        <img src="images/galeria-3.jpg" alt="foto 3" onerror="this.parentElement.classList.add('sem-foto')" />
-        <div class="galeria-placeholder"><span>&#128247;</span></div>
-      </div>
-
-      <div class="galeria-item">
-        <img src="images/galeria-4.jpg" alt="foto 4" onerror="this.parentElement.classList.add('sem-foto')" />
-        <div class="galeria-placeholder"><span>&#128247;</span></div>
-      </div>
-
-      <div class="galeria-item">
-        <img src="images/galeria-5.jpg" alt="foto 5" onerror="this.parentElement.classList.add('sem-foto')" />
-        <div class="galeria-placeholder"><span>&#128247;</span></div>
-      </div>
-
-      <div class="galeria-item">
-        <img src="images/galeria-6.jpg" alt="foto 6" onerror="this.parentElement.classList.add('sem-foto')" />
-        <div class="galeria-placeholder"><span>&#128247;</span></div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ===== CARTA ===== -->
-  <section class="carta" id="carta">
-    <div class="carta-wrap">
-      <div class="carta-detalhe">&#10084;</div>
-      <h2 class="carta-titulo">Para você, Isabela</h2>
-      <div class="carta-corpo">
-        <!--
+    <!-- ===== CARTA ===== -->
+    <section class="carta" id="carta">
+      <div class="carta-wrap">
+        <div class="carta-detalhe">&#10084;</div>
+        <h2 class="carta-titulo">Para você, Isabela</h2>
+        <div class="carta-corpo">
+          <!--
           INSTRUÇÃO: escreva sua carta aqui.
           Cada <p> é um parágrafo. Adicione quantos quiser.
         -->
-        <p>
-          Escreva aqui sua carta para a Isabela. Fale sobre o que sente,
-          o que ela representa pra você, os planos, os sonhos.
-        </p>
-        <p>
-          Pode ser algo simples, mas que venha do coração. Esse é o presente
-          mais valioso que este site pode guardar.
-        </p>
-        <p>
-          Pode ser curto, pode ser longo — o que importa é que seja verdadeiro.
-        </p>
+          <p>
+            Escreva aqui sua carta para a Isabela. Fale sobre o que sente, o que
+            ela representa pra você, os planos, os sonhos.
+          </p>
+          <p>
+            Pode ser algo simples, mas que venha do coração. Esse é o presente
+            mais valioso que este site pode guardar.
+          </p>
+          <p>
+            Pode ser curto, pode ser longo — o que importa é que seja
+            verdadeiro.
+          </p>
+        </div>
+        <p class="carta-assinatura">com amor, Vitor Hugo &#10084;</p>
       </div>
-      <p class="carta-assinatura">com amor, Vitor Hugo &#10084;</p>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <p>Isabela & Vitor Hugo &mdash; desde 13 de dezembro de 2025</p>
+      <p class="footer-small">feito com amor &#10084;</p>
+    </footer>
+
+    <!-- Lightbox (galeria) -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lb-close">&times;</button>
+      <img src="" alt="" id="lb-img" />
     </div>
-  </section>
 
-  <!-- ===== FOOTER ===== -->
-  <footer class="footer">
-    <p>Isabela & Vitor Hugo &mdash; desde 13 de dezembro de 2025</p>
-    <p class="footer-small">feito com amor &#10084;</p>
-  </footer>
-
-  <!-- Lightbox (galeria) -->
-  <div class="lightbox" id="lightbox">
-    <button class="lightbox-close" id="lb-close">&times;</button>
-    <img src="" alt="" id="lb-img" />
-  </div>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
