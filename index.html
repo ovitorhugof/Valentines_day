@@ -81,6 +81,66 @@
         <p>"Com você, tudo faz mais sentido."</p>
       </div>
     </section>
+<!-- ===== PLAYLIST / MÚSICAS ===== -->
+    <section class="playlist" id="playlist">
+      <h2 class="section-title">Músicas</h2>
+      <p class="section-sub">músicas que me fazem pensar em você</p>
+
+      <div class="musicas-grid">
+        <!-- MÚSICA 1 -->
+        <div class="musica-card" data-musica="musica1">
+          <div class="musica-icon"></div>
+          <h3 class="musica-titulo">Bem</h3>
+          <p class="musica-artista">Chapéu De Palha</p>
+          <button class="play-btn" data-audio="audio1">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none">⏸</span>
+            tocar
+          </button>
+          <audio id="audio1" preload="auto">
+            <source src="msc/Bem.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+
+        <!-- MÚSICA 2 -->
+        <div class="musica-card" data-musica="musica2">
+          <div class="musica-icon"></div>
+          <h3 class="musica-titulo">Partilhar</h3>
+          <p class="musica-artista">Rubel - Ana Vitória</p>
+          <button class="play-btn" data-audio="audio2">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none">⏸</span>
+            tocar
+          </button>
+          <audio id="audio2" preload="auto">
+            <source src="msc/Partilhar.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+
+        <!-- MÚSICA 3 -->
+        <div class="musica-card" data-musica="musica3">
+          <div class="musica-icon"></div>
+          <h3 class="musica-titulo">Quando Bate Aquela Saudade</h3>
+          <p class="musica-artista">Rubel</p>
+          <button class="play-btn" data-audio="audio3">
+            <span class="play-icon">▶</span>
+            <span class="pause-icon" style="display: none">⏸</span>
+            tocar
+          </button>
+          <audio id="audio3" preload="auto">
+            <source src="msc/Quando Bate Aquela Saudade.mp3" type="audio/mpeg" />
+          </audio>
+        </div>
+      </div>
+
+      <div class="global-player" id="globalPlayer" style="display: none">
+        <div class="global-player-info">
+          <span class="global-musica-titulo"></span>
+          <span class="global-musica-status"></span>
+        </div>
+        <button class="global-stop-btn" id="stopAllBtn">⏹ parar todas</button>
+      </div>
+    </section>
 
     <!-- ===== MOMENTOS ===== -->
     <section class="momentos" id="momentos">
@@ -177,68 +237,7 @@
     </div>
     </section>
 
-    <!-- ===== PLAYLIST / MÚSICAS ===== -->
-    <section class="playlist" id="playlist">
-      <h2 class="section-title">Músicas</h2>
-      <p class="section-sub">músicas que me fazem pensar em você</p>
-
-      <div class="musicas-grid">
-        <!-- MÚSICA 1 -->
-        <div class="musica-card" data-musica="musica1">
-          <div class="musica-icon"></div>
-          <h3 class="musica-titulo">Bem</h3>
-          <p class="musica-artista">Chapéu De Palha</p>
-          <button class="play-btn" data-audio="audio1">
-            <span class="play-icon">▶</span>
-            <span class="pause-icon" style="display: none">⏸</span>
-            tocar
-          </button>
-          <audio id="audio1" preload="auto">
-            <source src="msc/Bem.mp3" type="audio/mpeg" />
-          </audio>
-        </div>
-
-        <!-- MÚSICA 2 -->
-        <div class="musica-card" data-musica="musica2">
-          <div class="musica-icon"></div>
-          <h3 class="musica-titulo">Partilhar</h3>
-          <p class="musica-artista">Rubel - Ana Vitória</p>
-          <button class="play-btn" data-audio="audio2">
-            <span class="play-icon">▶</span>
-            <span class="pause-icon" style="display: none">⏸</span>
-            tocar
-          </button>
-          <audio id="audio2" preload="auto">
-            <source src="msc/Partilhar.mp3" type="audio/mpeg" />
-          </audio>
-        </div>
-
-        <!-- MÚSICA 3 -->
-        <div class="musica-card" data-musica="musica3">
-          <div class="musica-icon"></div>
-          <h3 class="musica-titulo">Quando Bate Aquela Saudade</h3>
-          <p class="musica-artista">Rubel</p>
-          <button class="play-btn" data-audio="audio3">
-            <span class="play-icon">▶</span>
-            <span class="pause-icon" style="display: none">⏸</span>
-            tocar
-          </button>
-          <audio id="audio3" preload="auto">
-            <source src="msc/Quando Bate Aquela Saudade.mp3" type="audio/mpeg" />
-          </audio>
-        </div>
-      </div>
-
-      
-
-      <div class="global-player" id="globalPlayer" style="display: none">
-        <div class="global-player-info">
-          <span class="global-musica-titulo"></span>
-          <span class="global-musica-status"></span>
-        </div>
-        <button class="global-stop-btn" id="stopAllBtn">⏹ parar todas</button>
-      </div>
-    </section>
+    
 
     <!-- ===== GALERIA ===== -->
     <section class="galeria" id="galeria">
